@@ -8,12 +8,17 @@ $footer-height: $lineHeight * 11;
  */
 
 .header-main {
-	height: $lineHeight * 20;
+	height: $lineHeight * 13;
 	background-image: url(../images/dots.svg);
-	// background-size: cover;
 	background-attachment: fixed;
+	background-size: cover;
 	background-color: #333;
 	box-shadow: inset 0px -2px 2px 0px rgba(51,51,51,1.0);
+	padding: 0 $lineHeight;
+
+	@include medium {
+		height: $lineHeight * 20;
+	}
 }
 
 .header__img {
@@ -68,7 +73,7 @@ $footer-height: $lineHeight * 11;
 main {
 	margin-bottom: $footer-height;
 	background-color: white;
-	box-shadow: 3px 2px 2px 0px rgba(51,51,51,0.5);
+	// box-shadow: 3px 2px 2px 0px rgba(51,51,51,0.5);
 
 	 a {
 	 	color: $color-primary;
@@ -81,9 +86,7 @@ main {
 }
 
 section {
-	// margin-top: $lineHeight * 2;
 	position: relative;
-	// height: 100%;
 }
 
 .img-grid {
@@ -105,23 +108,30 @@ section {
 }
 
 .half--img__venue {
-	background-image: url(../images/venue-mbc.jpg);
-	background-size: cover;
+	@include medium {
+		background-image: url(../images/venue-mbc.jpg);
+		background-size: cover;
+	}
 }
 
 .half--img__dt {
-	background-image: url(../images/flowers.jpg);
-	background-size: cover;
+	@include medium {
+		background-image: url(../images/flowers.jpg);
+		background-size: cover;
+	}
 }
 
 .half--img__acc {
-	background-image: url(../images/Pinehurst.jpg);
-	background-size: cover;
+	@include medium {
+		background-image: url(../images/Pinehurst.jpg);
+		background-size: cover;
+	}
 }
 
 .half--padding {
 	padding-left: $lineHeight * 2;
 	padding-right: $lineHeight * 2;
+	padding-bottom: $lineHeight * 2;
 }
 
 .bg-primary {
@@ -166,15 +176,12 @@ section {
  */
 
 .footer-main {
-	// background-color: $color-primary;
 	height: $footer-height;
 	width: 100%;
 	position: fixed;
 	z-index: -1;
 	bottom: 0;
 	padding: $lineHeight * 2;
-
-	// color: white;
 }
 
 .footer-heart {
