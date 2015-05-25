@@ -1,6 +1,6 @@
 $color-primary: #fc5666;
 $color-secondary: #3fa5a0;
-$footer-height: $lineHeight * 11;
+$footer-height: $lineHeight * 12;
 
 
 /**
@@ -9,9 +9,8 @@ $footer-height: $lineHeight * 11;
 
 .header-main {
 	height: $lineHeight * 13;
-	background-image: url(../images/dots.svg);
+	background-image: url(../images/dots-big.png);
 	background-attachment: fixed;
-	background-size: cover;
 	background-color: #333;
 	box-shadow: inset 0px -2px 2px 0px rgba(51,51,51,1.0);
 	padding: 0 $lineHeight;
@@ -22,7 +21,6 @@ $footer-height: $lineHeight * 11;
 }
 
 .header__img {
-	max-width: 600px;
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -39,20 +37,31 @@ $footer-height: $lineHeight * 11;
 
 .nav-main {
 	background-color: $color-secondary;
-	padding-left: $lineHeight * 2;
+	padding-left: $lineHeight;
+	
+	@include medium {
+		padding-left: $lineHeight * 2;
+	}
 
   ol {
-  	display: flex;
-  	flex-direction: row;
   	padding-top: 0;
   	margin-left: -15px;
   }
+
+  li {
+  	display: inline-block;
+  }
   
   a {
-  	padding: $lineHeight 15px;
+  	padding: $lineHeight/2 5px;
     color: white;
     text-decoration: none;
-    font-size: $fontMedium;
+    font-size: $fontBase;
+
+    @include medium {
+		padding: $lineHeight 15px;
+		font-size: $fontMedium;
+	}
 
     &:hover {
 		background: lighten($color-secondary, 10%);
@@ -73,7 +82,6 @@ $footer-height: $lineHeight * 11;
 main {
 	margin-bottom: $footer-height;
 	background-color: white;
-	// box-shadow: 3px 2px 2px 0px rgba(51,51,51,0.5);
 
 	 a {
 	 	color: $color-primary;
@@ -90,12 +98,8 @@ section {
 }
 
 .img-grid {
-	// width: 16.666666667%;
-	// width: 14.285714286%;
 	width: 33.33%;
-	// width: 25%;
 	float: left;
-	// border: 1px solid white;
 }
 
 .half {
@@ -107,32 +111,69 @@ section {
 	}
 }
 
-.half--img__venue {
+.half--padding {
+		padding: $lineHeight * 2 $lineHeight;
+
 	@include medium {
-		background-image: url(../images/venue-mbc.jpg);
+		padding: $lineHeight * 2;
+	}
+}
+
+.half--img__when {
+	@include medium {
+		background-image: url(../images/flowers-small.jpg);
 		background-size: cover;
 	}
 }
 
-.half--img__dt {
+.half--img__where {
 	@include medium {
-		background-image: url(../images/flowers.jpg);
+		background-image: url(../images/venue-mbc-small.jpg);
 		background-size: cover;
+		background-position: bottom;
 	}
 }
 
 .half--img__acc {
 	@include medium {
-		background-image: url(../images/Pinehurst.jpg);
+		background-image: url(../images/bouqet.jpg);
 		background-size: cover;
 	}
 }
 
-.half--padding {
-	padding-left: $lineHeight * 2;
-	padding-right: $lineHeight * 2;
+.contact {
+	padding-top: $lineHeight;
 	padding-bottom: $lineHeight * 2;
 }
+
+
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-main {
+	height: $footer-height;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+	bottom: 0;
+	padding: $lineHeight * 2;
+}
+
+.footer-heart {
+	width: 250px;
+}
+
+
+
+
+
+/**
+ * UTILS
+ */
 
 .bg-primary {
 	background: $color-primary;
@@ -165,28 +206,12 @@ section {
 	font-weight: 500;
 }
 
-.contact {
-	padding-top: $lineHeight;
-	padding-bottom: $lineHeight * 2;
+.text-primary {
+	color: $color-primary;
 }
 
-
-/**
- * FOOTER
- */
-
-.footer-main {
-	height: $footer-height;
-	width: 100%;
-	position: fixed;
-	z-index: -1;
-	bottom: 0;
-	padding: $lineHeight * 2;
+.text-secondary {
+	color: $color-secondary;
 }
-
-.footer-heart {
-	width: 250px;
-}
-
 
 
