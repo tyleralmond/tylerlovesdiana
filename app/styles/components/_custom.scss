@@ -16,7 +16,8 @@ $footer-height: $lineHeight * 12;
 	padding: 0 15px;
 
 	@include medium {
-		height: $lineHeight * 20;
+		// height: $lineHeight * 20;
+		height: 80vh; 
 	}
 }
 
@@ -140,8 +141,8 @@ section {
 // Contact info
 
 .contact {
-	padding-top: $lineHeight;
-	padding-bottom: $lineHeight * 2;
+	padding-top: $lineHeight * 4;
+	padding-bottom: $lineHeight * 5;
 }
 
 
